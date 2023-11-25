@@ -25,16 +25,12 @@ def test_rectangle():
     b = 20
     # TODO сосчитайте периметр
     perimeter = 2 * (a + b)
-    print("\n- - - - -")
-    print(perimeter)
-    print("- - - - -")
+
     assert perimeter == 60
 
     # TODO сосчитайте площадь
     area = a * b
-    print("\n- - - - -")
-    print(area)
-    print("- - - - -")
+
     assert area == 200
 
 
@@ -46,16 +42,14 @@ def test_circle():
     r = 23
     # TODO сосчитайте площадь
     area = math.pi * (r ** 2)
-    print("\n- - - - -")
-    print(area)
-    print("- - - - -")
+
     assert area == 1661.9025137490005
 
     # TODO сосчитайте длину окружности
     length = 2 * math.pi * r
-    print("\n- - - - -")
-    print(length)
-    print("- - - - -")
+
+    show_answer = f"\n- - - - -\nПлощадь = {area} \n- - - - -\nДлина = {length}"
+    print(show_answer)
     assert length == 144.51326206513048
 
 
@@ -64,7 +58,13 @@ def test_random_list():
     Создайте список из 10 случайных чисел от 1 до 100 (включая обе границы) и отсортируйте его по возрастанию.
     """
     # TODO создайте список
-    l = []
+    import random
+    l = [random.randint(1, 100), random.randint(1, 100),
+         random.randint(1, 100), random.randint(1, 100),
+         random.randint(1, 100), random.randint(1, 100),
+         random.randint(1, 100), random.randint(1, 100),
+         random.randint(1, 100), random.randint(1, 100)]
+    l.sort()
 
     assert len(l) == 10
     assert all(l[i] <= l[i + 1] for i in range(len(l) - 1))
